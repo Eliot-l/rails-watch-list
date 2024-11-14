@@ -1,0 +1,16 @@
+<h1>Vue index_list</h1>
+<body>
+  <h1></h1>
+
+  <div id="lists">
+    <% @lists.each do |list| %>
+      <%# <%= render list %>
+      <p>
+        <%= link_to list.name, list%>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New list", new_list_path %>
+
+</body>

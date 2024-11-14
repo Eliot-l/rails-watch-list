@@ -1,0 +1,20 @@
+<%= simple_form_for([@list, @bookmark]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+  </div>
+
+ <%# t.text "comment"
+    t.bigint "movie_id", null: false
+    t.bigint "list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false %>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
